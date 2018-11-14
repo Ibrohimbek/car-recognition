@@ -26,7 +26,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 
-ROOT_URLCONF = 'recognition.api.urls'
+ROOT_URLCONF = 'recognition.urls'
 
 WSGI_APPLICATION = 'recognition.wsgi.application'
 
