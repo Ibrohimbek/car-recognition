@@ -8,8 +8,8 @@ ALLOWED_HOSTS = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'recognizer',
-        'USER': 'car_recognition',
+        'NAME': 'car_recognition',
+        'USER': 'recognizer',
         'PASSWORD': '12345!abcde@12345#',
         'HOST': 'localhost',
     }
