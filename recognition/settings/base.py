@@ -14,6 +14,16 @@ ALLOWED_HOSTS = [
     '*',
 ]
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'car_recognizer',
+        'USER': 'postgres',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+    }
+}
+
 INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
