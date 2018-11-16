@@ -10,7 +10,7 @@ LOGFILE=${HOMEDIR}/logs/gunicorn.log
 
 USER=recognizer
 GROUP=projects
-NUM_WORKERS=5
+NUM_WORKERS=3
 TIMEOUT=300
 
 DJANGO_SETTINGS_MODULE=recognition.settings.production
@@ -33,5 +33,4 @@ exec ${BINDIR}/gunicorn ${DJANGO_WSGI_MODULE}:application \
   --timeout ${TIMEOUT} \
   --log-file ${LOGFILE} \
   --bind unix:$SOCKFILE \
-  --workers ${NUM_WORKERS} \
-  --settings ${DJANGO_SETTINGS_MODULE}
+  --workers ${NUM_WORKERS}
