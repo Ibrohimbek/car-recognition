@@ -1,5 +1,7 @@
 from .base import *  # noqa
 
+DEBUG = False
+
 ALLOWED_HOSTS = [
     '54.159.34.159',
     '*.ermatov.me',
