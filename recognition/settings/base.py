@@ -14,19 +14,10 @@ ALLOWED_HOSTS = [
     '*',
 ]
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'car_recognizer',
-        'USER': 'postgres',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-    }
-}
-
 INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django.contrib.staticfiles',
 
     'recognition',
 ]
@@ -61,3 +52,29 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 100,
     'ORDERING_PARAM': 'ordering',
 }
+
+TEMPLATES = [
+ {
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    'DIRS': [
+        # os.path.join(BASE_DIR, 'templates')
+    ],
+    'APP_DIRS': True,
+    'OPTIONS': {
+        'context_processors': [
+            'django.template.context_processors.debug',
+            'django.template.context_processors.request',
+            'django.contrib.auth.context_processors.auth',
+            'django.contrib.messages.context_processors.messages',
+        ],
+    },
+ },
+]
+
+# Static and media files
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
