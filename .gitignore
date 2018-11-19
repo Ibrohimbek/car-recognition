@@ -1,8 +1,8 @@
 ### Project ###
 docs/_build/
 docs/locale/
-/media/*
-/static/*
+media/*
+static/*
 /recognition/settings/local.py
 /.vagrant
 coverage.xml
