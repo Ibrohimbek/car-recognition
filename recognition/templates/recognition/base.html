@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'recognition/css/bootstrap.min.css' %}" rel="stylesheet">
+    <title>Car regcognition</title>
+  </head>
+  <body>
+    {% block header %}
+      <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Welcome to a car recognition service</h4>
+        <p>Please select a photo of a car and click to Recognize button</p>
+      </div>
+    {% endblock %}
+
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'recognition/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'recognition/js/bootstrap.min.js' %}"></script>
+
+  </body>
+</html>
