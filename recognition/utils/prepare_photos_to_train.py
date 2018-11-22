@@ -10,9 +10,6 @@ max_width_or_height = 500
 
 
 def copy_files():
-    print(classes)
-    return
-
     for class_name in classes:
         if not isdir(join(path, class_name)):
             continue
