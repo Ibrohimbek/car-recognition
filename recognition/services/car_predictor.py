@@ -1,6 +1,5 @@
-from fastai.conv_learner import (
-    ConvLearner, tfms_from_model, transforms_side_on, ImageClassifierData, get_cv_idxs, open_image)
-from fastai.torch_imports import resnext101_64
+from fastai.fastai.conv_learner import (
+    ConvLearner, tfms_from_model, transforms_side_on, ImageClassifierData, get_cv_idxs, open_image, resnext101_64)
 import numpy as np
 
 
@@ -23,9 +22,11 @@ class CarPredictor:
         preds = learn.predict_array(im[None])
         class_id = np.argmax(preds)
         class_name = learn.data.classes[class_id]
-
+        class_value = preds[0][class_id]
+        percentage = round(np.exp(class_value) * 100, 2)
         return {
-            'car_model': class_name
+            'car_model': class_name,
+            'probability': percentage
         }
 
     @staticmethod

@@ -24,7 +24,7 @@
   <hr>
   <div>
     {% if uploaded_file_url %}
-      <p>Car model: <b>{{ car_model }}</b></p>
+      <p>Car model: <b>{{ car_model }} ({{ probability }})</b> </p>
       <img src="{{ uploaded_file_url }}" class="img-fluid" alt="Selected photo">
     {% else %}
       <p>Photo not found</p>

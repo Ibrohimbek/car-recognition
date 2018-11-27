@@ -24,7 +24,8 @@ class MainView(View):
 
         context = {
             'uploaded_file_url': file_path,
-            'car_model': result.get('car_model')
+            'car_model': result.get('car_model'),
+            'probability': result.get('probability')
         }
         return render(request, self.template, context)
 
