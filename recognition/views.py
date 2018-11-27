@@ -1,6 +1,8 @@
 from django.core.files.storage import FileSystemStorage
 from django.shortcuts import render, redirect
 from django.views import View
+from django.conf import settings
+from recognition.services.car_predictor import CarPredictor
 
 
 class MainView(View):
@@ -17,7 +19,12 @@ class MainView(View):
         fs = FileSystemStorage()
         filename = fs.save(photo.name, photo)
 
+        file_path = fs.url(filename)
+        result = CarPredictor.predict(f"{settings.BASE_DIR}{file_path}")
+
         context = {
-            'uploaded_file_url': fs.url(filename)
+            'uploaded_file_url': file_path,
+            'car_model': result.get('car_model')
         }
         return render(request, self.template, context)
+
