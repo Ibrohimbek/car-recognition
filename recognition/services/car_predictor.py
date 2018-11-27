@@ -1,4 +1,4 @@
-from fastai.fastai.conv_learner import (
+from fastai.conv_learner import (
     ConvLearner, tfms_from_model, transforms_side_on, ImageClassifierData, get_cv_idxs, open_image, resnext101_64)
 import numpy as np
 

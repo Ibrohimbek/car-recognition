@@ -3,7 +3,7 @@ docs/_build/
 docs/locale/
 media/*
 static/*
-fastai/*
+fastai/weights/*
 /recognition/settings/local.py
 /.vagrant
 coverage.xml
